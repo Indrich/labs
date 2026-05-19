@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Архив всех статей</title>
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+</head>
+<body class="archive">
+
+    <header class="site-header">
+        <div class="header-center-area">
+            <img src="/static/dpb-logo.png" class="main-logo-centered" alt="Логотип">
+            <h1>Коллективный блог</h1>
+            <div class="auth-links">
+                {% if user.is_authenticated %}
+                    <span style="color: #2c3e50;">Привет, {{ user.username }}!</span>
+                {% else %}
+                    <a href="{% url login %}">Вход</a>
+                    <a href="{% url register %}">Регистрация</a>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="icons-for-parallax">
+            <img src="/static/doc-icon.png" class="icon-for-parallax-first" alt="Документ 1">
+            <img src="/static/doc-icon.png" class="icon-for-parallax-second" alt="Документ 2">
+            <img src="/static/doc-icon.png" class="icon-for-parallax-third" alt="Документ 3">
+        </div>
+        
+        <div class="clear"></div>
+    </header>
+
+    <div class="main-content">
+        <div class="archive">
+            {% for post in posts %}
+            <div class="one-post">
+                <div class="one-post-shadow"></div>
+                <h2><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
+                <p class="article-author">{{ post.author }}</p>
+                
+                <div class="post-footer">
+                    <span class="article-created-date">{{ post.date }}</span>
+                    <button class="fold-button">свернуть</button>
+                </div>
+                
+                <p class="article-text">{{ post.text }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <script src="{{ STATIC_URL }}jquery.js"></script>
+    <script src="{% static 'fold-post.js' %}"></script>
+    <script src="{% static 'highlight-post.js' %}"></script>
+    <script src="{% static 'parallax.js' %}"></script>
+</body>
+</html>

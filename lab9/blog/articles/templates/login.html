@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Вход в блог</title>
+    <link rel="stylesheet" href="{{ STATIC_URL }}index.css">
+</head>
+<body class="archive">
+    <div class="content">
+        <img src="{{ STATIC_URL }}dpb-logo.png" class="large-logo" alt="Логотип">
+        <h1>Вход в систему</h1>
+        
+        <form method="POST">
+            {% csrf_token %}
+            <input type="text" name="username" placeholder="Логин" value="{{ form.username }}"><br>
+            <input type="password" name="password" placeholder="Пароль"><br>
+            <input type="submit" value="Войти">
+        </form>
+        
+        {% if form.errors %}
+            <div class="error-message">{{ form.errors }}</div>
+        {% endif %}
+    </div>
+</body>
+</html>

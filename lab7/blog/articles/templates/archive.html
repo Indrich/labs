@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Архив всех статей</title>
+    <link rel="stylesheet" href="{{ STATIC_URL }}index.css">
+</head>
+<body class="archive">
+
+    <div class="top-row">
+    <div></div> <div class="top-right-btn">
+<p style="color: yellow;">
+</p>
+        {% if user.is_authenticated %}
+            <span>Привет, {{ user.username }}!</span>
+        {% else %}
+            <a href="{% url login %}" class="back-link">Войти</a> | 
+            <a href="{% url register %}" class="back-link">Регистрация</a>
+        {% endif %}
+    </div>
+    </div>
+
+    <div class="header">
+        <img src="{{ STATIC_URL }}dpb-logo.png" />
+    </div>
+    
+    <div class="archive">
+        {% for post in posts %}
+	<div class="one-post">
+	<div class="one-post-shadow"></div>
+    	<h2>{{ post.title }}</h2>
+   	 <p class="article-author">{{ post.author }}</p>
+    
+    	<div class="post-footer">
+        <span class="article-created-date">{{ post.date }}</span>
+        <button class="fold-button">свернуть</button>
+    	</div>
+    
+    	<p class="article-text">{{ post.text }}</p>
+	</div>
+        {% endfor %}
+    </div>
+
+    <script src="{{ STATIC_URL }}helloworld.js"></script>
+    <script src="{{ STATIC_URL }}fold-post.js"></script>
+    <script src="{{ STATIC_URL }}jquery.js"></script>
+    
+    
+    <script src="{{ STATIC_URL }}highlight-post.js"></script>
+</body>
+</html>
