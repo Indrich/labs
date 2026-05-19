@@ -1,0 +1,192 @@
+body {
+    background: #1abc9c;
+    font-family: Tahoma, Arial, sans-serif;
+    color: #333; 
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+p, h4 {
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+img {
+    height: 30px;
+    width: auto;
+}
+
+
+.article-container {
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+}
+
+.top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.top-left-img .large-logo {
+    width: 400px;
+    height: auto; 
+}
+
+.back-link {
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.large-title {
+    font-size: 32px;
+    text-align: left;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.meta-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+.meta-author {
+    font-weight: normal;
+}
+
+.meta-date {
+    font-style: italic;
+}
+
+.justified-text {
+    text-align: justify;
+    line-height: 1.6;
+    font-size: 16px;
+}
+.content {
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 40px;
+}
+
+.content h1 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+
+.content form {
+    display: flex;
+    flex-direction: column; 
+    max-width: 600px; 
+}
+
+
+.content input[type="text"] {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.2); 
+    color: #ffffff;
+    margin-bottom: 20px;
+    outline: none;
+}
+
+.content input[type="text"]::placeholder,
+.content textarea::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.content textarea {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    min-height: 200px; 
+    margin-bottom: 25px;
+    resize: vertical; 
+    outline: none;
+    font-family: Tahoma, Arial, sans-serif;
+}
+
+.content input[type="submit"] {
+    background-color: #ffffff;
+    color: #1abc9c; 
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    align-self: flex-start; 
+    transition: background-color 0.2s;
+}
+
+.content input[type="submit"]:hover {
+    background-color: #e6e6e6;
+}
+
+.error-message {
+    color: #e74c3c; 
+    font-weight: bold;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.content input[type="email"],
+.content input[type="password"] {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    margin-bottom: 20px;
+    outline: none;
+    max-width: 600px;
+}
+
+.content input[type="email"]::placeholder,
+.content input[type="password"]::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.content input[type="email"],
+.content input[type="password"] {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    margin-bottom: 20px;
+    outline: none;
+    max-width: 600px;
+}
+
+.content input[type="email"]::placeholder,
+.content input[type="password"]::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.top-row span {
+    color: #ffffff;
+    font-size: 20px;
+    font-family: Tahoma, Arial, sans-serif;
+}

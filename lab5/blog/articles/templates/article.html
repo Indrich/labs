@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ post.title }}</title>
+    <link rel="stylesheet" href="{{ STATIC_URL }}index.css">
+</head>
+<body class="article">
+
+    <div class="article-container">
+        <div class="top-row">
+            <div class="top-left-img">
+                <img src="{{ STATIC_URL }}dpb-logo.png" alt="Логотип" class="large-logo" />
+            </div>
+            <div class="top-right-btn">
+                <a href="{% url archive %}" class="back-link">Все статьи</a>
+            </div>
+        </div>
+
+        <h1 class="large-title">{{ post.title }}</h1>
+        
+        <div class="meta-row">
+            <span class="meta-author">Автор: {{ post.author.username }}</span>
+            <span class="meta-date">{{ post.created_date }}</span>
+        </div>
+        
+        <p class="justified-text">{{ post.text }}</p>
+    </div>
+
+</body>
+</html>
